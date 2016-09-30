@@ -1,10 +1,4 @@
 
-#Panu Peltola
-#pbp168
-#Student #11225502
-#CMPT 141 - 03
-#a1q4
-
 
 print('Enter a verb ending in "ing":')
 verb=str(input())
