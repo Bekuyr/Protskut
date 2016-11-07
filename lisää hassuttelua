@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+using namespace std;
+bool k[365];
+int bday;
+int numdays, N, total;
+float avg;
+
+int findmatch()
+{
+	for (int i = 0; i <= 364; i++)
+	{
+		k[i] = false;
+	}
+	for (int i = 0; i <= 1000; i++)
+	{
+
+		bday = (rand() % 365);
+		if (k[bday])
+		{
+			return (i+1); //current person is i+1 since otherwise first person would be number 0 
+		}
+		else
+		{
+			k[bday] = true;
+		}
+	}
+}
+
+int simulate(int N)
+{
+	for (int i = 0; i < N; i++)
+	{
+		total += findmatch();  //funtction findmatch finds the number of the person who entered with a birthday that matches someone's in the room
+		
+	}
+	avg = total / N;
+	return(avg);
+}
+
+int main()
+{
+
+	cout << simulate(1)<<endl;
+	
+
+	return 0;
+	
+	
+}
+
